@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    nav{
+        background-color: black;
+      
+    }
+    body{
+
+    
+background: #ffd89b;
+background: -webkit-linear-gradient(to right, #ecaed1, #d967b5);
+background: linear-gradient(to right, #efc3d5, #86476c);
+min-height: 100vh;
+}
+   
+ 
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: aliceblue;">Neonatal Mortality</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+            <ul class="navbar-nav">
+              
+              
+              {% if user.is_authenticated %}
+              
+            
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'food' %}"style="color: aliceblue;">Food</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'workout' %}"style="color: aliceblue;">Workout</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'vaccination' %}"style="color: aliceblue;">Vaccination</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Scheme' %}"style="color: aliceblue;">Scheme</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'chatbot' %}"style="color: aliceblue;">Chatbot</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Appointment' %}"style="color: aliceblue;">Appointment</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'logout_view' %}"style="color: aliceblue;">Logout</a>
+              </li>
+          
+              {% else %}
+              <li class="nav-item" style="font-family: cursive;">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Home</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'login_view' %}" style="color: aliceblue;">Login</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'signup' %}"style="color: aliceblue;">Register</a>
+              </li>
+              {% endif %}
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container">
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+        <div class="text-container">
+
+      <center><h2 style="font-family: 'Times New Roman', Times, serif;">Walking</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Walking is one of the simple and easy exercises to do during the second trimester. 
+        Several birthing centres suggest pregnant women to go for a walk as it decreases the complications
+         and risks during pregnancy and delivery. Before you start, you must ensure that you wear comfortable 
+         shoes that provide an optimum grip and support while walking. You do not have to walk intensely, 
+         instead, a stroll in the park or leisurely walk is sufficient to keep yourself healthy.</p>
+        </div>
+          </div>
+          <div class="row-6">
+        <div class="image-container" >
+         <img src="static/pic9.png" style="width: 300px; margin-left: 20%;margin-top:18%">
+         </div>
+          </div>
+        </div>
+         <hr>
+         <div class="col-12" style="display: flex;">
+          <div class="row-6">
+       
+       <div class="text-container">
+
+      <center><h2 style="font-family: 'Times New Roman', Times, serif;">Slow Jogging</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Healthcare experts recommend slow jogging only for those with a confirmed healthy pregnancy.
+         So, first, get a regular checkup from your doctor, and if he or she has suggested you slow jogging, 
+         you can incorporate the same into your exercise schedule.</p>
+        </div>
+          </div>
+          <div class="row-6">
+        <div class="image-container">
+
+         <img src="static/pic10.png" style="width: 300px; margin-left: 20%;margin-top:18%">
+        </div>
+          </div>
+         </div>
+        <hr>
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+        <div class="text-container">
+
+            <center><h2 style="font-family: 'Times New Roman', Times, serif;">Squats</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Squats strengthen leg muscles which are necessary for maintaining a healthy pregnancy. 
+        Healthcare experts advise doing this exercise only when you do not face high-risk pregnancy
+         and are comfortable while doing the same.
+         Stretch your feet widely
+         Stretch your hand at the front and keep it at your shoulder level. Bend your knees and squat down at a 90-degree angle.
+         Remain in this position for around 3 to 4 seconds. Stand straight again.
+         Repeat this exercise as much as you feel comfortable
+         Make sure you properly breathe out when you are squatting down and breath in when you are lifting yourself up </p>
+         <pre><p style="font-family: 'Times New Roman', Times, serif;">
+          1.Stand with feet shoulder-width apart.
+          2.Lower your body by bending your knees and pushing your hips back.
+          3.Keep your chest up and back straight.
+          4.Lower until thighs are parallel to the ground.
+          5.Push through your heels to return to standing.
+          Aim for 8-12 repetitions.</p></pre>
+        </div>
+          </div>
+          <div class="row">
+         <div class="image-container">
+         <img src="static/pic11.png" style="width: 280px; margin-left: 20%;margin-top:50%" >
+        </div>
+          </div>
+        </div>
+        <hr>
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+
+        <div class="text-container">
+
+            <center><h2 style="font-family: 'Times New Roman', Times, serif;">Hip Flexor Stretch</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Hip flexors are the muscles above your thighs that help you bend at the waist and lift your knees. 
+        Bend your right knee and keep your left foot in front, making a right angle.
+        Next, keep your left hand on your left thigh and make sure your trunk stays tall.
+        Keep your back upright, lean forward, and keep your body weight on the front leg. This way, you will feel a stretch in your right thigh.
+        Hold this position for 30 seconds, then repeat this on another leg.
+      </p>
+      <pre><p style="font-family: 'Times New Roman', Times, serif;">
+        1.Start in a half-kneeling position with one knee on the ground
+        and the other foot flat on the floor in front.
+        2.Engage your core and tilt your pelvis slightly backward.
+        3.Gently shift your weight forward, feeling a stretch in the front of your hip and thigh.
+        4.Hold the stretch for 20-30 seconds.
+        5.Switch sides and repeat.
+        6.Aim for 2-3 stretches on each side.
+        7.Avoid overstretching and listen to your body.
+        8.Incorporate this stretch into your routine to improve hip flexibility
+         and reduce tightness.</p></pre>
+        </div>
+          </div>
+          <div class="row-6">
+        <div class="image-container">
+         <img src="static/pic12.png" style="width: 280px; margin-left: 20%;margin-top:50%; height: 224px;" >
+        </div>
+        </div>
+        </div>
+
+
+      </div>
+
+</body>
+</html>

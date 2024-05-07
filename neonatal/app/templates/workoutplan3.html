@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    nav{
+        background-color: black;
+    }
+        body{
+        background: #ffd89b;
+        background: -webkit-linear-gradient(to right, #ecaed1, #d967b5);
+        background: linear-gradient(to right, #efc3d5, #86476c);
+        min-height: 100vh;
+}
+
+   
+ 
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: aliceblue;">Neonatal Mortality</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+            <ul class="navbar-nav">
+              
+              
+              {% if user.is_authenticated %}
+              
+            
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'food' %}"style="color: aliceblue;">Food</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'workout' %}"style="color: aliceblue;">Workout</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'vaccination' %}"style="color: aliceblue;">Vaccination</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Scheme' %}"style="color: aliceblue;">Scheme</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'chatbot' %}"style="color: aliceblue;">Chatbot</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Appointment' %}"style="color: aliceblue;">Appointment</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'logout_view' %}"style="color: aliceblue;">Logout</a>
+              </li>
+          
+              {% else %}
+              <li class="nav-item" style="font-family: cursive;">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Home</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'login_view' %}" style="color: aliceblue;">Login</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'signup' %}"style="color: aliceblue;">Register</a>
+              </li>
+              {% endif %}
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+     
+      <div class="container">
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+        <div class="text-container">
+
+      <center><h2 style="font-family: 'Times New Roman', Times, serif;">YOGA</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">
+          Prenatal yoga is a commonly recommended pregnancy workout due to its low intensity, 
+          low stress and holistic benefits for expecting mothers. Like many workout options,
+          you will need to adapt yoga, as certain poses and stretches will not be possible or recommended
+          for pregnant women, such as poses where falling is a high risk. You can find good prenatal yoga 
+          videos online, or you can sign up for classes at a local gym.</p>
+          <pre style="font-family: 'Times New Roman', Times, serif;"><p style="font-family: 'Times New Roman', Times, serif;">
+            <h3 style="font-family: 'Times New Roman', Times, serif;">7 Pregnancy Yoga Poses To Do for Pregnant Wom</h3>
+            1.Tadasana - The mountain pose.
+            2.Agnistambhasana -The ankle-to-knee pose.
+            3.Balasana -The child pose.
+            4.Malasana -The squat pose.
+            5.Matsyasana -The supported fish pose.
+            6.Bitilasana -The cat and cow pose.
+            7.Ujjayi Pranayama -Belly breathing.</p></pre>
+        </div>
+          </div>
+          <div class="row-6">
+        <div class="image-container" >
+         <img src="static/pic.5.png"style="width: 280px; margin-left: 10%;margin-top:80%">
+         </div>
+          </div>
+        </div>
+         <hr>
+
+
+
+
+         <div class="col-12" style="display: flex;">
+          <div class="row-6">
+
+       
+       <div class="text-container">
+
+      <center><h2 style="font-family: 'Times New Roman', Times, serif;" >Spin Class (Stationary Bikes)</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">
+        Perhaps you enjoyed bike rides before pregnancy, but you don’t want to risk hitting a bump or
+         falling off your bike. If this is the case, a spin class may be a good option for you.
+          Even if you are new to cycling or spin class, this is still a safe, fun option as long as 
+          you pace yourself appropriately and start off with shorter routines.
+          It is also important to stay seated on the bike, as standing increases intensity and risk of
+           falling or joint pain. As in all exercises during pregnancy, the ability to have a conversation, 
+           without gasping for breath, is a good indicator your intensity level is good.
+
+        </p>
+        </div>
+          </div>
+          <div class="row-6">
+        <div class="image-container">
+
+         <img src="static/pic6.png" style="width: 280px; margin-left: 10%;margin-top:20%">
+        </div>
+          </div>
+         </div>
+        <hr>
+
+
+
+
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+
+
+        <div class="text-container">
+
+            <center><h2 style="font-family: 'Times New Roman', Times, serif;">Weight Training/Resistance</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Weights and resistance training are also an option, as long as you are careful and use appropriately sized weights.
+         Lifting heavy weights is not recommended, or safe, during pregnancy.   Five-pound hand weights, or even
+          resistance bands, are recommended for muscle toning during pregnancy.A good policy is to increase repetition, 
+          rather than increasing weight during pregnancy. It is also a good idea for weight and resistance training to
+           be done under supervision. Make sure to use good technique, as well as, slow and controlled movements.</p>
+           <pre>
+            <p style="font-family: 'Times New Roman', Times, serif;">
+              1.Warm-Up: 5-10 minutes of dynamic movements.
+              2.Exercises: Choose 5-7 exercises targeting different muscle groups.
+              3.Sets/Reps: 2-3 sets of 8-12 reps per exercise.
+              4.Rest: 1-2 minutes between sets.
+              5.Cool Down: 5-10 minutes of static stretches.
+              6.Frequency: 2-3 sessions per week.
+              7.Time: Each session typically lasts 30-60 minutes.
+              8.Progression: Increase weight or reps as strength improves.
+              9.Listen to Your Body: Stop if you feel pain beyond normal soreness.
+              10.Consultation: Seek guidance from a professional if needed.</p>
+           </pre>
+        </div>
+          </div>
+          <div class="row-6">
+         <div class="image-container">
+         <img src="static/pic7.png" style="width: 280px; margin-left: 10%;margin-top:80%" >
+        </div>
+        </div>
+        </div>
+        <hr>
+
+
+
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+
+        <div class="text-container">
+
+            <center><h2 style="font-family: 'Times New Roman', Times, serif;">Side-Lying Inner and Outer Thigh</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Lie on your right side, head supported by your forearm, right leg bent at a 45-degree angle, 
+        and left leg straight. Place your opposite arm on the floor for stability. 
+        Lift left leg to about hip height and repeat for reps. Then, bend your left knee and rest it on top of the pillows for support.
+        Straighten your right leg and lift it as high as possible for reps. Switch sides and repeat for reps.</p>
+        <pre>
+          <p style="font-family: 'Times New Roman', Times, serif;">
+            1.Lie on one side with your legs stacked on top of each other.
+            2.Support your head with your bottom arm and place your top hand on the floor in front of you for balance.
+            3.Engage your core muscles to stabilize your torso.
+            4.Lift your top leg toward the ceiling, keeping it straight and in line with your body.
+            5.Pause briefly at the top of the movement, focusing on squeezing the muscles of the inner thigh.
+            6.Slowly lower your leg back to the starting position.
+            7.Repeat the movement for the desired number of repetitions, then switch sides.
+            8.Focus on maintaining proper form and control throughout the exercise, avoiding any swinging or momentum.
+            9.Gradually increase the intensity by adding resistance bands or ankle weights as you become stronger.
+            10.Incorporate this exercise into your regular workout routine to target and strengthen the inner 
+            and outer thigh muscles effectively.
+            </p>
+        </pre>
+        </div>
+          </div>
+          <div class="row-6">
+
+         
+        <div class="image-container">
+         <img src="static/pic8.png" style="width: 280px; margin-left: 10%;margin-top:80%">
+        </div>
+          </div>
+        </div>
+
+
+      </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+</head>
+<style>
+  nav{
+      background-color: black;
+    
+  }
+  h1{
+    margin-bottom: 5%;
+  }
+  form{
+    background-color: black;
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0.7;
+  }
+  body{
+      background-image: url('static/home.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  </style>
+<body>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: aliceblue;">Neonatal Mortality</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+        <ul class="navbar-nav">
+          
+          
+          {% if user.is_authenticated %}
+          
+        
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'food' %}"style="color: aliceblue;">Food</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'workout' %}"style="color: aliceblue;">Workout</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'vaccination' %}"style="color: aliceblue;">Vaccination</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'Scheme' %}"style="color: aliceblue;">Scheme</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'chatbot' %}"style="color: aliceblue;">Chatbot</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'Appointment' %}"style="color: aliceblue;">Appointment</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'logout_view' %}"style="color: aliceblue;">Logout</a>
+          </li>
+      
+          {% else %}
+          <li class="nav-item" style="font-family: cursive;">
+            <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Home</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'login_view' %}" style="color: aliceblue;">Login</a>
+          </li>
+          <li class="nav-item"style="font-family: cursive;">
+            <a class="nav-link " href="{% url 'signup' %}"style="color: aliceblue;">Register</a>
+          </li>
+          {% endif %}
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+    <div class="container">
+      <form id="appointmentForm" style="width: 50%;margin-left: 25%; margin-top: 2%;" method="post" action="{% url 'Appointment' %}">
+        {% csrf_token %}
+        <center><h1>Appointment Form</h1></center>
+      
+        <div class="mb-3 row" style="margin-left: 10%;" >
+          <label for="Doctor" class="col-sm-4 col-form-label">Doctor Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="Doctor" required>
+          </div>
+        </div>
+      
+        <div class="mb-3 row" style="margin-left: 10%;">
+          <label for="Time" class="col-sm-4 col-form-label">Date</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" name="Date" required>
+          </div>
+        </div>
+      
+        <div class="mb-3 row" style="margin-left: 10%;">
+          <label for="Patient" class="col-sm-4 col-form-label">Patient Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="Patient" required>
+          </div>
+        </div>
+      
+        <div class="mb-3 row" style="margin-left: 10%;">
+          <label for="Treatment" class="col-sm-4 col-form-label">Treatment</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="Treatment" required>
+          </div>
+        </div>
+        
+        <div class="mb-3 row" style="margin-left: 10%;">
+          <label for="Contact" class="col-sm-4 col-form-label">Contact</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="Contact" required>
+          </div>
+        </div>
+        
+        <center><button type="submit" class="btn btn-primary" id="submit-button">Submit</button></center>
+      </form>
+      
+      {% if msg %}
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+              var inputs = document.querySelectorAll('input');
+              var isValid = true;
+              inputs.forEach(function(input) {
+                if (!input.value) {
+                  isValid = false;
+                }
+              });
+              if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+                alert("All fields are required.");
+              } else {
+                alert("{{ msg }}");
+              }
+            });
+          });
+        </script>
+      {% endif %}
+      
+</body>
+</html>

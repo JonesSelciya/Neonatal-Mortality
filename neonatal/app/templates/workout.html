@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    nav{
+        background-color: black;
+      
+    }
+    form{
+        margin-left: 30%;
+        color: aliceblue;
+
+    }
+    body{
+      background-image: url('static/home.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+    } h1{
+      color: aliceblue;
+    }
+    
+a{
+    text-decoration: none;
+    color:palevioletred;
+    font-size:28px;
+}
+#login-form{
+    display: none;
+}
+.form-box{
+    width:380px;
+    height:480px;
+    position:relative;
+    margin-top:10% auto;
+    background:rgba(0,0,0,0.3);
+    padding:10px;
+    overflow: hidden;
+}
+.button-box{
+    margin:35px auto;
+    position:relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.toogle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position:relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #f3c693;
+    border-radius: 30px;
+    transition:5s;
+}
+.input-group-login{
+    top:150px;
+    position:absolute;
+    width:280px;
+    transition:5s;
+}
+.input-group-register{
+    top:120px;
+    position: absolute;
+    width:280px;
+    transition:5s;
+}
+.input-field{
+    width:100%;
+    padding:5px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width:85%;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin:auto;
+    background:#f3c693;
+    border:0;
+    outline:none;
+    border-radius: 30px;
+}
+
+
+#register{
+    left:450px;
+}
+#register input{
+    color:white;
+    font-size:15;
+    
+}
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: aliceblue;">Neonatal Mortality</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+            <ul class="navbar-nav">
+              
+              
+              {% if user.is_authenticated %}
+              
+            
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'food' %}"style="color: aliceblue;">Food</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'workout' %}"style="color: aliceblue;">Workout</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'vaccination' %}"style="color: aliceblue;">Vaccination</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Scheme' %}"style="color: aliceblue;">Scheme</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'chatbot' %}"style="color: aliceblue;">Chatbot</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Appointment' %}"style="color: aliceblue;">Appointment</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'logout_view' %}"style="color: aliceblue;">Logout</a>
+              </li>
+          
+              {% else %}
+              <li class="nav-item" style="font-family: cursive;">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Home</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'login_view' %}" style="color: aliceblue;">Login</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'signup' %}"style="color: aliceblue;">Register</a>
+              </li>
+              {% endif %}
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container">
+       
+      
+        
+
+
+      <div class="fm" style="background-color: black; opacity:0.7 ;width: 69%; margin-left: 12%;margin-top: 10%;">
+        <form method="post" action="{% url 'workout' %}" style="margin-left: 4%; margin-right:9%;">
+          {% csrf_token %} 
+          <h1>ENTER THE DETAILS</h1>
+          <input type='text' class='input-field' name="bmi" placeholder=' Enter BMI' style="color:aliceblue;" required>
+         
+          <input type='text' class='input-field' name="Sugar" placeholder='Enter Sugar Level' style="color:aliceblue;"  required>
+          <input type='text' class='input-field' name="BP" placeholder=" Enter BP" style="color:aliceblue;"  required>
+          <input type='number' class='input-field' name="Pregnancy" placeholder=' Enter Month Of Pregnancy' style="color:aliceblue;"  required>
+         
+          <!-- <input type='checkbox' class='check-box'><span>I agree the terms & conditions</span>  -->
+          <button type='submit' class='submit-btn' style="width: 20%;">Submit</button>
+          
+      </form>
+    </div>
+    
+    </div>
+      
+
+     
+    
+</body>
+</html>

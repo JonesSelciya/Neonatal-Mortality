@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    nav{
+        background-color: black;
+      
+    }
+  .text-container h2{
+    justify-content: center;
+   }
+   body{
+
+    
+background: #ffd89b;
+background: -webkit-linear-gradient(to right, #ecaed1, #d967b5);
+background: linear-gradient(to right, #efc3d5, #86476c);
+min-height: 100vh;
+}
+
+
+
+   
+ 
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: aliceblue;">Neonatal Mortality</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+            <ul class="navbar-nav">
+              
+              
+              {% if user.is_authenticated %}
+              
+            
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'food' %}"style="color: aliceblue;">Food</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'workout' %}"style="color: aliceblue;">Workout</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'vaccination' %}"style="color: aliceblue;">Vaccination</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Scheme' %}"style="color: aliceblue;">Scheme</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'chatbot' %}"style="color: aliceblue;">Chatbot</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'Appointment' %}"style="color: aliceblue;">Appointment</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'logout_view' %}"style="color: aliceblue;">Logout</a>
+              </li>
+          
+              {% else %}
+              <li class="nav-item" style="font-family: cursive;">
+                <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;">Home</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'login_view' %}" style="color: aliceblue;">Login</a>
+              </li>
+              <li class="nav-item"style="font-family: cursive;">
+                <a class="nav-link " href="{% url 'signup' %}"style="color: aliceblue;">Register</a>
+              </li>
+              {% endif %}
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+
+      <div class="container">
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+
+        
+        <div class="text-container">
+
+      <center><h2>PELVIC FLOOR ACTIVATION</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">
+        You may have heard about the importance of pelvic floor health during and after pregnancy. 
+        The pelvic floor is a group of skeletal muscles at the base of the pelvis,
+         that forms a bowl-shaped structure connecting our sit bones, our tailbone, and our pubic bone. 
+         In other words, it covers the entire bottom of our pelvis</p>
+        <pre><p style="font-family: 'Times New Roman', Times, serif;">
+          1.Identify the pelvic floor muscles by stopping urination midstream.
+          2.Find a comfortable position to perform the exercises.
+          3.Contract the pelvic floor muscles by squeezing and lifting them upward.
+          4.Hold the contraction for 3-5 seconds, gradually increasing to 10 seconds.
+          5.Relax the muscles and rest for 5-10 seconds between contractions.
+          6.Repeat the contractions 10-15 times in one session, aiming for three sessions daily.
+          7.Progress by increasing the duration or repetitions over time.
+          8.Consistency is key; make pelvic floor exercises a regular part of your routine for best results.</p></pre>
+        </div>
+      </div>
+      <div class="row-6">
+        <div class="image-container" >
+         <img src="static/pic1.png" style="width: 100%;margin-top: 40%; margin-left:5%;">
+         </div>
+        </div>
+      </div>
+  
+         <hr>
+         <div class="col-12" style="display: flex;">
+          <div class="row-6">
+       
+       <div class="text-container">
+
+      <center><h2 style="font-family: 'Times New Roman', Times, serif;">STEP BACK</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Step one foot back as if you are mid-step and lower your back heel down,
+        leaning your body forward to create one long diagonal line through the crown of your 
+        head and down through the back heel, arms reaching back behind you. Keeping your back leg straight, 
+        lift the heel high, squeeze the back glute and push through the ball of the foot
+        to engage your glutes while reaching your arms overhead. Feel a huge stretch on the 
+        hip flexor which tends to get very tight from pregnancy. From there, return to start position</p>
+        <pre><p style="font-family: 'Times New Roman', Times, serif;">
+          1.Identify Pelvic Floor Muscles: Locate by stopping urination or imagining lifting them upward.
+          2.Choose a Position: Lie down, sit, or stand comfortably.
+          3.Relax: Take deep breaths to relax your body.
+          4.Contract Muscles: Squeeze and lift pelvic floor muscles.
+          5.Hold Contraction: Start with 3-5 seconds, gradually increase to 10 seconds.
+          6.Relax: Slowly release the contraction.
+          7.Rest: Take 5-10 seconds rest between contractions.
+          8.Repeat: Aim for 10-15 repetitions per session.
+          9.Frequency: Perform at least three sessions daily.
+          10.Progression: Increase intensity over time.
+          11.Consistency: Make it a daily habit.</p></pre>
+        </div>
+          </div>
+          <div class="row-6"></div>
+        <div class="image-container">
+
+         <img src="static/pic2.png" style="width:250px;margin-top: 40%; margin-left:5%;">
+        </div>
+         </div>
+          
+        <hr>
+        <div class="text-container">
+          <div class="col-12" style="display: flex;">
+            <div class="row-6">
+
+            <center><h2 style="font-family: 'Times New Roman', Times, serif;">INTERNAL 45 WITH SIDE STRETCH</h2></center>
+         <p style="font-family: 'Times New Roman', Times, serif;">From your internal stagger position, drop the hand weights and stretch your back leg.
+         Reach the arm of your extended back leg straight forward in line with your shoulder and bend 
+         the other elbow out to the side at a 90 degree angle. Reach your bent arm up overhead while 
+         allowing your hips to shift to the side, feeling an elongation from your hip all the way up 
+         through your fingertips, allowing breath to move into the sides of your body.</p>
+         <pre><p style="font-family: 'Times New Roman', Times, serif;">
+          1.Seated position: Start in a seated position on the floor with knees bent and feet flat.
+          2.Engage core: Tighten your core muscles to stabilize your spine and maintain balance.
+          3.Lean back slightly: Gently lean back while keeping your back straight, avoiding rounding of the spine.
+          4.Rotate torso: Slowly rotate your torso to one side, aiming to bring your elbow toward the opposite knee.
+          5.Side stretch: Feel the stretch along the side of your body as you rotate.
+          6.Return to center: Gradually return to the starting position with control.
+          7.Alternate sides: Repeat the movement on the other side, rotating to the opposite direction.
+          8.Breathing: Inhale as you rotate, exhale as you return to the starting position.
+          9.Focus on form: Maintain proper alignment throughout the exercise to prevent strain or injury.
+          10.Start with light movements: Begin with small rotations and gradually increase range of motion
+          as you become more comfortable with the exercise.</p></pre>
+        </div>
+          
+          <div class="row-6">
+         <div class="image-container">
+         <img src="static/pic3.png"style="width: 250px; margin-left: 20%;margin-top:30%" >
+        </div>
+          </div>
+        </div>
+        <hr>
+        <div class="col-12" style="display: flex;">
+          <div class="row-6">
+        <div class="text-container">
+
+            <center><h2 style="font-family: 'Times New Roman', Times, serif;">HAMSTRING PRESS</h2></center>
+      <p style="font-family: 'Times New Roman', Times, serif;">Come to a side-lying position on a prenatal wedge or a stack of pillows to keep your heart above your baby. 
+        Bend your knees so they are in 90-degree angles, knees in line with hips and feet in line with knees. 
+        Lift your top leg and flex your foot and then extend the leg straight back behind you,
+        working into the back of the leg and glute.</p>
+        <pre><p style="font-family: 'Times New Roman', Times, serif;">
+          1.Lie on your back with knees bent and feet flat on the floor.
+          2.Lift your hips toward the ceiling while keeping your shoulders on the ground.
+          3.Extend one leg straight out, keeping hips level.
+          4.Hold for a moment, then return to starting position.
+          5.Repeat with the other leg.
+          6.Aim for 8-12 repetitions on each side.</p></pre>
+        </div>
+          </div>
+        <div class="row-6">
+        <div class="image-container">
+         <img src="static/pic4.png" style="width: 280px; margin-left: 20%;margin-top:30%">
+        </div>
+        </div>
+        </div>
+
+
+      </div>
+</body>
+</html>
